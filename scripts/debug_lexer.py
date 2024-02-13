@@ -124,7 +124,8 @@ def decode_atheris(bstr):
     return ''.join(map(valid_codepoint), chars)
 
 
-def main(fn, lexer=None, options={}):
+def main(fn, lexer=None, options=None):
+    options = {} if options is None else options
     if fn == '-':
         text = sys.stdin.read()
     else:
