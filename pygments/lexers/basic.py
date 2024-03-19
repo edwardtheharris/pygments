@@ -657,5 +657,5 @@ class BBCBasicLexer(RegexLexer):
     }
 
     def analyse_text(text):
-        if text.startswith('10REM >') or text.startswith('REM >'):
+        if text.startswith(('10REM >', 'REM >')):
             return 0.9

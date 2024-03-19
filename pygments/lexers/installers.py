@@ -259,7 +259,7 @@ class SourcesListLexer(RegexLexer):
     def analyse_text(text):
         for line in text.splitlines():
             line = line.strip()
-            if line.startswith('deb ') or line.startswith('deb-src '):
+            if line.startswith(('deb ', 'deb-src ')):
                 return True
 
 

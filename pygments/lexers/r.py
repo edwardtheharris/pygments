@@ -37,7 +37,7 @@ class RConsoleLexer(Lexer):
 
         for match in line_re.finditer(text):
             line = match.group()
-            if line.startswith('>') or line.startswith('+'):
+            if line.startswith(('>', '+')):
                 # Colorize the prompt as such,
                 # then put rest of line into current_code_block
                 insertions.append((len(current_code_block),

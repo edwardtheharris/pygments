@@ -115,7 +115,7 @@ class PsyshConsoleLexer(Lexer):
         insertions = []
         for match in line_re.finditer(text):
             line = match.group()
-            if line.startswith('>>> ') or line.startswith('... '):
+            if line.startswith(('>>> ', '... ')):
                 insertions.append((len(curcode),
                                    [(0, Generic.Prompt, line[:4])]))
                 curcode += line[4:]

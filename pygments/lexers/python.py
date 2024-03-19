@@ -652,7 +652,7 @@ class PythonConsoleLexer(Lexer):
         tb = 0
         for match in line_re.finditer(text):
             line = match.group()
-            if line.startswith('>>> ') or line.startswith('... '):
+            if line.startswith(('>>> ', '... ')):
                 tb = 0
                 insertions.append((len(curcode),
                                    [(0, Generic.Prompt, line[:4])]))

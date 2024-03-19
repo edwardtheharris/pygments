@@ -785,7 +785,7 @@ class SqliteConsoleLexer(Lexer):
         insertions = []
         for match in line_re.finditer(data):
             line = match.group()
-            if line.startswith('sqlite> ') or line.startswith('   ...> '):
+            if line.startswith(('sqlite> ', '   ...> ')):
                 insertions.append((len(curcode),
                                    [(0, Generic.Prompt, line[:8])]))
                 curcode += line[8:]

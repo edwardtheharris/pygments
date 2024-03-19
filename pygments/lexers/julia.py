@@ -255,7 +255,7 @@ class JuliaConsoleLexer(Lexer):
                 curcode += line[6:]
                 output = False
                 error = False
-            elif line.startswith('help?>') or line.startswith('shell>'):
+            elif line.startswith(('help?>', 'shell>')):
                 yield start, Generic.Prompt, line[:6]
                 yield start + 6, Text, line[6:]
                 output = False

@@ -41,7 +41,7 @@ def escape_html(text, table=_escape_html_table):
 
 
 def webify(color):
-    if color.startswith('calc') or color.startswith('var'):
+    if color.startswith(('calc', 'var')):
         return color
     else:
         return '#' + color
