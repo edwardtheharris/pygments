@@ -285,7 +285,7 @@ class ElixirLexer(RegexLexer):
             else:
                 yield index, token, value
 
-    def gen_elixir_sigil_rules():
+    def gen_elixir_sigil_rules(self):
         # all valid sigil terminators (excluding heredocs)
         terminators = [
             (r'\{', r'\}', '}',   'cb'),

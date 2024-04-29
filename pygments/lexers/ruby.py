@@ -87,7 +87,7 @@ class RubyLexer(ExtendedRegexLexer):
             ctx.end = len(ctx.text)
             del heredocstack[:]
 
-    def gen_rubystrings_rules():
+    def gen_rubystrings_rules(self):
         def intp_regex_callback(self, match, ctx):
             yield match.start(1), String.Regex, match.group(1)  # begin
             nctx = LexerContext(match.group(3), 0, ['interpolated-regex'])

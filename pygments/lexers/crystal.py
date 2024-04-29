@@ -87,7 +87,7 @@ class CrystalLexer(ExtendedRegexLexer):
             ctx.end = len(ctx.text)
             del heredocstack[:]
 
-    def gen_crystalstrings_rules():
+    def gen_crystalstrings_rules(self):
         states = {}
         states['strings'] = [
             (r'\:\w+[!?]?', String.Symbol),
